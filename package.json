@@ -1,0 +1,59 @@
+{
+  "name": "file_manager_frontend",
+  "description": "Cross-platform open source file manager on Electron with React + separate backend in C",
+  "author": "Vitaliy Malyshev",
+  "private": true,
+  "version": "0.0.1",
+  "main": "./src/main/main.js",
+  "scripts": {
+    "dev": "concurrently \"cross-env NODE_ENV=development vite\" \"cross-env NODE_ENV=development electronmon --inspect=5858 --trace-warnings --no-sandbox .\"",
+    "build:renderer": "cross-env NODE_ENV=production vite build",
+    "build:electron": "cross-env NODE_ENV=production electron-builder",
+    "build": "npm run build:renderer && npm run build:electron",
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.7",
+    "@babel/preset-react": "^7.27.1",
+    "@eslint/js": "^9.30.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "babel-loader": "^10.0.0",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^29.0.0",
+    "electron-builder": "^24.9.1",
+    "electronmon": "^2.0.3",
+    "eslint": "^9.30.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^16.2.0",
+    "sass": "^1.89.2",
+    "vite": "^5.0.12"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0"
+  },
+  "build": {
+    "appId": "x-bit-x.file_manager",
+    "productName": "FileManager",
+    "files": [
+      "dist/renderer/**/*",
+      "src/main/main.js",
+      "src/preload/preload.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
