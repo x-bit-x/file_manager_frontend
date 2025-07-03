@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
+
+import Entry from 'components/Entry'
 import styles from './DirectoryContent.module.sass'
-import Entry from '../Entry'
 
 const DirectoryContent = ({ entries }) => {
   return (

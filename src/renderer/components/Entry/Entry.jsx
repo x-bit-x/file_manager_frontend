@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
-import styles from './Entry.module.sass'
 import { FaFile, FaFolder } from 'react-icons/fa'
+
+import styles from './Entry.module.sass'
 
 const Entry = ({ entry }) => {
   return (
