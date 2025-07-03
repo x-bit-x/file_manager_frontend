@@ -1,5 +1,6 @@
-import DirectoryContent from 'components/DirectoryContent/DirectoryContent'
+
 import { useEffect, useState } from 'react'
+import DirectoryContent from './components/DirectoryContent'
 
 const App = () => {
   const [entries, setEntries] = useState([])
@@ -14,7 +15,7 @@ const App = () => {
 
   return (
     <div>
-      <DirectoryContent entries={entries} viewMode="grid" />
+      <DirectoryContent entries={entries} />
     </div>
   )
 }
